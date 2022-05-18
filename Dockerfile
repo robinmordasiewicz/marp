@@ -8,4 +8,4 @@ RUN apk --no-cache add shadow && \
     groupmod -g 1000 marp && \
     chown -R marp:marp /home/marp
 
-USER marp
+#USER marp
