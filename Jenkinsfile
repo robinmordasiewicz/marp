@@ -62,7 +62,7 @@ pipeline {
         beforeAgent true
         expression {
           container('ubuntu') {
-            sh(returnStatus: true, script: 'skopeo inspect docker://docker.io/robinhoodis/ffmpeg:`cat VERSION`') == 1
+            sh(returnStatus: true, script: 'skopeo inspect docker://docker.io/robinhoodis/marp:`cat VERSION`') == 1
           }
         }
       }
@@ -72,8 +72,8 @@ pipeline {
             sh ''' 
             /kaniko/executor --dockerfile=Dockerfile \
                              --context=`pwd` \
-                             --destination=robinhoodis/ffmpeg:`cat VERSION` \
-                             --destination=robinhoodis/ffmpeg:latest \
+                             --destination=robinhoodis/marp:`cat VERSION` \
+                             --destination=robinhoodis/marp:latest \
                              --cache=true
             '''
           }
