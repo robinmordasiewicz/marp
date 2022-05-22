@@ -8,4 +8,6 @@ RUN apk --no-cache add shadow && \
     groupmod -g 1000 marp && \
     chown -R marp:marp /home/marp
 
-#USER marp
+RUN npm install -g @marp-team/marp-cli
+
+USER marp
