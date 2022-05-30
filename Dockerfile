@@ -22,7 +22,7 @@ RUN apk update && apk upgrade && \
       wayland-dev@edge \
       su-exec
 
-RUN addgroup -S marp && adduser -S -g ubuntu ubuntu \
+RUN addgroup -S ubuntu && adduser -S -g ubuntu ubuntu \
     && mkdir -p /home/ubuntu/app /home/ubuntu/.cli
 
 RUN apk --no-cache add shadow && \
